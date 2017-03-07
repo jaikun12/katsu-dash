@@ -1,0 +1,20 @@
+.icon-btn{
+	background:none;
+	border:solid #DF1A3F 2px;
+	border-radius:10px;
+	-o-transition:.2s;
+  	-ms-transition:.2s;
+  	-moz-transition:.2s;
+  	-webkit-transition:.2s;
+  	width:50px;
+}
+
+.icon-btn:hover{
+	color:red;
+	background:#DF1A3F;
+}
+
+.icon-btn:focus{
+	outline:none;
+	background:#A0152F;
+}
