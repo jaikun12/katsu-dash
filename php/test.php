@@ -2,10 +2,10 @@
 	header("../index.php");
 	include("dbconnect.php");
 
-	$query = $connection->prepare("INSERT INTO report_users_table (username, password, is_admin, firstname, middlename, lastname, contact_num, email, is_active, created_by) VALUES (?,?,?,?,?,?,?,?,?,?);");
-	$query->bind_param("ssisssssis", $username, $init_pass, $is_admin, $firstname, $middlename, $lastname, $contact_num, $email, $is_active, $created_by);
+	$query = $connection->prepare("INSERT INTO reports_users_table (username, password, is_admin, firstname, middlename, lastname, is_active, contact_num, email, created_by) VALUES (?,?,?,?,?,?,?,?,?,?);");
+	$query->bind_param("ssisssisss", $username, $init_pass, $is_admin, $firstname, $middlename, $lastname, $is_active, $contact_num, $email, $created_by);
 
-	$query2 = $connection->prepare("SELECT * FROM report_users_table WHERE username = ? AND password = ?;");
+	$query2 = $connection->prepare("SELECT * FROM reports_users_table WHERE username = ? AND password = ?;");
 	$query2->bind_param("ss",$username,$init_pass);
 
 	echo mysqli_error($connection);
@@ -61,6 +61,36 @@
 	$firstname = "Shi Jin";
 	$middlename = "NA";
 	$lastname = "Yoo";
+	$contact_num = "091234567";
+	$email = "sample@gmail.com";
+	$is_active = 1;
+	$created_by = "super admin";
+
+	$init_pass = crypt($password, "!@#$%pornpatrol^&*()");
+
+	$query->execute();
+
+	$username = "boazcstrike";
+	$password = "user";
+	$is_admin = 0;
+	$firstname = "Boaz";
+	$middlename = "Y";
+	$lastname = "Sy";
+	$contact_num = "091234567";
+	$email = "sample@gmail.com";
+	$is_active = 1;
+	$created_by = "super admin";
+
+	$init_pass = crypt($password, "!@#$%pornpatrol^&*()");
+
+	$query->execute();
+
+	$username = "rappy";
+	$password = "user";
+	$is_admin = 0;
+	$firstname = "John";
+	$middlename = "Tiongson";
+	$lastname = "Sevilla";
 	$contact_num = "091234567";
 	$email = "sample@gmail.com";
 	$is_active = 1;
