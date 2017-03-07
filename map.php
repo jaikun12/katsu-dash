@@ -6,16 +6,24 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="file_includes/css/bootstrap.min.css" >
 		<link rel="stylesheet" type="text/css" href="file_includes/css/index.css">
+		<link rel="stylesheet" type="text/css" href="file_includes/css/map.css">
 		<link rel="stylesheet" type="text/css" href="file_includes/css/buttons.css"></head>
 	</head>
 	<body>
+		<nav>
+			<div class="navbar">
+			<ul>
+				<li>Home</li>
+			</ul>
+			</div>
+		</nav>
 	<style>
 		#bataan{
 			fill:red;
 		}
 
 	</style>
-	<div class="map" style ="height:800px; width:800px; border:solid #DF1A3F 1px">
+	<div class="map">
 		<svg version ="1.1" style="position: absolute; width: 716px; height: 700px; top: 0.125px; left: 0px;">
 			<desc>JavaScript chart by amCharts 3.20.20
 			</desc>
