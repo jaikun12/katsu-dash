@@ -3,7 +3,7 @@
 	include("dbconnect.php");
 
 	$query = $connection->prepare("INSERT INTO report_users_table (username, password, is_admin, firstname, middlename, lastname, contact_num, email, is_active, created_by) VALUES (?,?,?,?,?,?,?,?,?,?);");
-	$query->bind_param("ssisssssis", $username, $init_pass, $is_admin, $firstname, $middlename, $lastname,  $is_active, $contact_num, $email, $created_by);
+	$query->bind_param("ssisssssis", $username, $init_pass, $is_admin, $firstname, $middlename, $lastname, $contact_num, $email, $is_active, $created_by);
 
 	$query2 = $connection->prepare("SELECT * FROM report_users_table WHERE username = ? AND password = ?;");
 	$query2->bind_param("ss",$username,$init_pass);
