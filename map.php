@@ -1,6 +1,12 @@
 <html>
 	<head>
-
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Anti-ChildPorn</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="file_includes/css/bootstrap.min.css" >
+		<link rel="stylesheet" type="text/css" href="file_includes/css/index.css">
+		<link rel="stylesheet" type="text/css" href="file_includes/css/buttons.css"></head>
 	</head>
 	<body>
 	<style>
