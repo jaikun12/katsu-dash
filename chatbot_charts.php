@@ -10,8 +10,8 @@
 			var options = {
 				title: 'My Daily Activities'
 			};
-		var chart = new google.visualization.PieChart(document.getElementById('katsu'));
+		var chart = new google.visualization.PieChart(document.getElementById('chatbot_gender_chart'));
 		chart.draw(data, options);
 		}
 </script>
-<div id="katsu" style="width: 900px; height: 500px;"></div>
+<div id="chatbot_gender_chart" style="width: 900px; height: 500px;"></div>
