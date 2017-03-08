@@ -1,5 +1,7 @@
 <?php
 	include("partial_view/essentials-upper.html");
+	include("php/dbconnect.php");
+	include("php/session_check.php");
 ?>
 <div class="main-container">
 
@@ -72,31 +74,37 @@
 					$query = mysqli_query($connection, "SELECT * FROM reports_users_table;");
 
 					while($r = mysqli_fetch_array($query)){
-						$username = $r['username'];
-						$output_admin = $r['is_admin'];
+						if($r['is_active']==0){
 
-						if($output_admin==0){
-							$is_admin = "Employee"
-						}elseif($output_admin==1){
-							$is_admin = "Administrator";
-						}else{}
+						}else{
+							$username = $r['username'];
+							$output_admin = $r['is_admin'];
 
-						$firstname = $r['firstname'];
-						$middlename = $r['middlename'];
-						$lastname = $r['lastname'];
-						$name = $lastname . ", " . $firstname . " ". $middlename;
-						$contact_num = $r['contact_num'];
-						$email = $r['email'];
+							if($output_admin==0){
+								$is_admin = "Employee";
+							}elseif($output_admin==1){
+								$is_admin = "Administrator";
+							}else{
 
-						echo "
-						<tr>
-							<td>" . $username . "</td>
-							<td>" . $is_admin . "</td>
-							<td>" . $name . "</td>
-							<td>" . $contact_num . "</td>
-							<td>" . $email . "</td>
-						</tr>
-						";
+							}
+
+							$firstname = $r['firstname'];
+							$middlename = $r['middlename'];
+							$lastname = $r['lastname'];
+							$name = $lastname . ", " . $firstname . " ". $middlename;
+							$contact_num = $r['contact_num'];
+							$email = $r['email'];
+
+							echo "
+							<tr>
+								<td>" . $username . "</td>
+								<td>" . $is_admin . "</td>
+								<td>" . $name . "</td>
+								<td>" . $contact_num . "</td>
+								<td>" . $email . "</td>
+							</tr>
+							";
+						}
 					}
 				?>
 
@@ -107,7 +115,18 @@
 	</div>
 
 </div>
+<script>
+	$(document).ready(function(){
+		$("#hide").click(function(){
+			$("p").hide(1000);
+		});
+		$("#show").click(function(){
+			$("p").show(500);
+		});
+	});
+</script>
 
 <?php
 	include("partial_view/essentials-footer.html");
 ?>
+
