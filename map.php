@@ -10,6 +10,14 @@
 		<link rel="stylesheet" type="text/css" href="file_includes/css/buttons.css"></head>
 	</head>
 	<body>
+		<?php
+			include("../php/dbconnect.php");
+			
+
+
+
+
+		?>
 		<nav>
 			<div class="navbar">
 			<ul>
