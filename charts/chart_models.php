@@ -8,4 +8,14 @@ function sum_age($table,$attrib,$num){
     }
     return $total_age;
   }
+
+function count_likes($webtoonID) { 
+        global $connection;
+
+        $query = "SELECT * from wt_likes WHERE webtoonID='$webtoonID'";
+        $result = mysqli_query($connection, $query); 
+        $count = mysqli_num_rows($result);  
+
+        return $count;
+    }
   ?>
