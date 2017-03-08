@@ -9,6 +9,7 @@ body{
 	background: #ECE9E6; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	overflow:hidden;
 }
 
 .main-container{
@@ -19,6 +20,32 @@ body{
 	vertical-align:middle;
 	text-align:center;
 	/*border:solid red 2px;*/
+}
+
+.landing-main{
+	padding-top:10vh;
+	height:100vh;
+	width:100vw;
+	
+	/*border:solid red 2px;*/
+}
+
+.content-area{
+	float:left;
+	border-right:solid #DF1A3F 1px;
+	height:100vh;
+	width:70vw;
+	padding-left:10vh;
+
+}
+
+.info-panel{
+	float:left;
+	width:30vw;
+	height:100vh;
+	padding-left:20px;
+	/*border:solid black 5px;*/
+
 }
 
 .main-logo{
@@ -74,3 +101,48 @@ nav{
 	/*display:table-cell;*/
 	/*vertical-align:middle;*/
 }
+
+nav ul a{
+	float:left;
+	margin:20px;
+	height:60%;
+	font-weight:bolder;
+
+	/*border-bottom:solid black 5px;*/
+}
+
+nav ul{
+	height:10vh;
+}
+
+nav ul a li{
+	color:#C4003F;
+}
+
+nav ul a:hover{
+	text-decoration:none;
+	color:#C4003F;
+	border-bottom:solid #C4003F 5px;;
+}
+
+nav ul .active{
+	border-bottom:solid #C4003F 5px;
+}
+
+.nav-logo{
+	height:5vh;
+}
+
+.brand:hover{
+	border:none;
+}
+
+#users-table{
+	width:60vw;
+	height:40vh;
+	border-top:solid #C4003F 1px;
+	border-bottom:solid #C4003F 2px;
+	background:white;
+	/*border:solid black 2px;*/
+}
+

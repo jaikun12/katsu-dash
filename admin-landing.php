@@ -4,9 +4,18 @@
 	include("php/session_check.php");
 ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div class="main-container">
-	<img src="file_includes/images/dswdlogo.png" class="main-logo">
-	<h1>Admin Dashboard</h1>
+		<nav>
+			<div class="navbar">
+			<ul>
+				<a href="" class="brand"><li><img src="file_includes/images/dswdlogo.png" class="nav-logo"></li></a>
+				<a href="admin-landing.php" class="active"><li>Home</li></a>
+				<a href="map.php"><li>Case Mapping</li></a>
+				<a href="katsu_answers_charts.php"><li>Chatbot Charts</li></a>
+			</ul>
+			</div>
+		</nav>
+<div class="landing-main">
+	<div class="content-area">
 	<div class="modal fade" id="user-modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -56,9 +65,8 @@
 		</div>
 	</div>
 	<!-- </div> -->
-	<div class="container" id="users-table">
 		<h3>User List</h3>
-		<table class="table table-hover" style="max-width: 90% !important;">
+		<table id="users-table" class="table table-hover">
 			<thead>
 				<tr>
 					<th>Username</th>
@@ -102,9 +110,15 @@
 				?>
 			</tbody>
 		</table>
-		<button class="btn-primary" data-toggle="modal" data-target="#user-modal">Add User</button>
-	</div>
+		<button class="primary-button" data-toggle="modal" data-target="#user-modal">Add User</button>
+		</div>
 
+		<div class="info-panel">
+			<h3>Hello admin!</h3>
+			<p>Welcome to the anti child porn PH report generating platform.</p>
+			<p>The user list shown on the left shows the current active accounts that could access the system.</p>
+			<p>Proceed to the case mapping page to view a heatmap of child pornography cases in the Philippines.</p>
+		</div>
 </div>
 <script>
 	$(document).ready(function(){

@@ -1,9 +1,24 @@
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <?php
 	include("partial_view/essentials-upper.html");
 	include("php/dbconnect_katsu.php");
 	include("php/session_check.php");
-
+?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<nav>
+			<div class="navbar">
+			<ul>
+				<a href="" class="brand"><li><img src="file_includes/images/dswdlogo.png" class="nav-logo"></li></a>
+				<a href="admin-landing.php" class="active"><li>Home</li></a>
+				<a href="map.php"><li>Case Mapping</li></a>
+				<a href="katsu_answers_charts.php"><li>Chatbot Charts</li></a>
+			</ul>
+			</div>
+		</nav>
+		<div class="landing-main">
+			<div class="content-area">
+			<h2>Response Charts</h2>
+<?php
+	
 	$get_questions = mysqli_query($connection,"SELECT * FROM katsu_questions_table;");
 
 	while($r = mysqli_fetch_array($get_questions)){
@@ -42,7 +57,7 @@
 						}
 				</script>";
 			
-			echo '<div id="'.$qid.'" style="width: 600px; height: 400px;"></div>';
+			echo '<div id="'.$qid.'" class="chart-item" style="width: 300px; height: 200px;"></div>';
 		}else{
 
 		}
@@ -50,3 +65,5 @@
 	}
 
 ?>
+	</div>
+</div>

@@ -27,7 +27,10 @@
 		<nav>
 			<div class="navbar">
 			<ul>
-				<li>Home</li>
+				<a href="" class="brand"><li><img src="file_includes/images/dswdlogo.png" class="nav-logo"></li></a>
+				<a href="admin-landing.php"><li>Home</li></a>
+				<a href="map.php"><li>Case Mapping</li></a>
+				<a href="katsu_answers_charts.php"><li>Chatbot Charts</li></a>
 			</ul>
 			</div>
 		</nav>
