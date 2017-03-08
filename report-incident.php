@@ -24,9 +24,9 @@
 			<label for="">Age</label>
 			<input type="text" class="form-control" id="" name="age" placeholder="Input Child's Child Age (at the commision of crime)">
 			<label for="">Sex</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Sex">
+			<input type="text" class="form-control" id="" name="sex" placeholder="Input Child's Sex">
 			<label for="">Religion</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Religion">
+			<input type="text" class="form-control" id="" name="religion" placeholder="Input Child's Religion">
 		</div>
 		<br>
 		<div class="form-group">
@@ -126,16 +126,16 @@
 		<div class="form-group">
 			<h4>Case Information</h4>
 			<label for="">*Type of Case</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Type of Case">
+			<input type="text" class="form-control" id="" name="type_of_case" placeholder="Input Child's Type of Case">
 			<label for="">Case Scenario or Modes of Victimization</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Case Scenario or Modes of Victimization (e.g. Webcam/online live sex shows,  grooming)">
+			<input type="text" class="form-control" id="" name="case_scenario" placeholder="Input Child's Case Scenario or Modes of Victimization (e.g. Webcam/online live sex shows,  grooming)">
 			<label for="">Perpetrators</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Perpetrators (e.g. Parents/relatives, paedophile, syndicated)">
+			<input type="text" class="form-control" id="" name="perpetrators" placeholder="Input Child's Perpetrators (e.g. Parents/relatives, paedophile, syndicated)">
 			<label for="">Case Origin</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Case Origin (PNP, DSWD, NBI, etc.)">
+			<input type="text" class="form-control" id="" name="case_origin" placeholder="Input Child's Case Origin (PNP, DSWD, NBI, etc.)">
 			<br>
 			<label for="">Cooperating Agencies/ Organziations</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Cooperating Agencies/ Organziations">
+			<input type="text" class="form-control" id="" name="cooperating_agencies" placeholder="Input Child's Cooperating Agencies/ Organziations">
 			<label for="">Interventions Provided</label>
 			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Interventions Provided (e.g. Medical, psychosocial support, counselling, temporary shelter, livelihood, etc.)">
 			<label for="">Status of the Case </label>
