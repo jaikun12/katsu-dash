@@ -19,6 +19,7 @@ body{
 	display:table-cell;
 	vertical-align:middle;
 	text-align:center;
+	padding:20px;
 	/*border:solid red 2px;*/
 }
 
@@ -32,9 +33,19 @@ body{
 
 .content-area{
 	float:left;
-	border-right:solid #DF1A3F 1px;
-	height:100vh;
+	border-right:solid #E6E6E6 3px;
+	height:90vh;
 	width:70vw;
+	padding-left:10vh;
+	overflow:auto;
+
+}
+
+.content-area-full{
+	float:left;
+	/*border-right:solid #DF1A3F 1px;*/
+	height:100vh;
+	width:100vw;
 	padding-left:10vh;
 
 }
@@ -44,9 +55,11 @@ body{
 	width:30vw;
 	height:100vh;
 	padding-left:20px;
+	padding-right:20px;
 	/*border:solid black 5px;*/
 
 }
+
 
 .main-logo{
 	width:50vw;

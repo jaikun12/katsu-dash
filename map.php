@@ -12,7 +12,17 @@
 	<body>
 		<?php
 			include("php/dbconnect.php");
+			include("php/session_check.php");
 			include("models/getcolor.php");
+
+			$isadmin = $_SESSION['is_admin'];
+
+			if($isadmin == 1){
+				$link = "admin-landing.php";
+			}
+			else{
+				$link = "user-landing.php";
+			}
 
 		?>
 
@@ -28,10 +38,13 @@
 			<div class="navbar">
 			<ul>
 				<a href="" class="brand"><li><img src="file_includes/images/dswdlogo.png" class="nav-logo"></li></a>
-				<a href="admin-landing.php"><li>Home</li></a>
-				<a href="map.php"><li>Case Mapping</li></a>
+				<a href="<?php echo $link;?>"><li>Home</li></a>
+				<a href="report-incident.php"><li>Record Incident</li></a>
+				<a href="map.php" class="active"><li>Case Mapping</li></a>
 				<a href="katsu_answers_charts.php"><li>Chatbot Charts</li></a>
+				<a href="php/logout.php"><li>Logout</li></a>
 			</ul>
+
 			</div>
 		</nav>
 		<style>
@@ -415,6 +428,9 @@
 				<span class="legend-text">Dangerous</span>
 			</p>
 			<p>Provinces without a highlight has no cases of child pornography.</p>
+			<p>*Landscape orientation recommended</p>
+			<button class="primary-button" onclick="window.print()">Print</button>
+
 		</div>
 
 

@@ -3,8 +3,9 @@
 	include("php/dbconnect_r.php");
 	include("php/session_check.php");
 ?>
+<link rel="stylesheet" href="file_includes/css/record.css">
 
-<div class="container">
+<div class="form-container">
 	<form action="php/record_incident.php" method="POST" role="form">
 		<legend>Record Incident</legend>
 	
@@ -152,7 +153,8 @@
 			
 		</div>
 		<br>
-		<button type="submit" class="btn btn-primary">REPORT</button>
+		<button type="submit" class="primary-button">REPORT</button>
+		<button type="submit" class="null-button" onclick="history.back()">Cancel</button>
 	</form>
 </div>
 

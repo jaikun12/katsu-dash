@@ -9,8 +9,10 @@
 			<ul>
 				<a href="" class="brand"><li><img src="file_includes/images/dswdlogo.png" class="nav-logo"></li></a>
 				<a href="admin-landing.php" class="active"><li>Home</li></a>
+				<a href="report-incident.php"><li>Record Incident</li></a>
 				<a href="map.php"><li>Case Mapping</li></a>
 				<a href="katsu_answers_charts.php"><li>Chatbot Charts</li></a>
+				<a href="php/logout.php"><li>Logout</li></a>
 			</ul>
 			</div>
 		</nav>
@@ -111,7 +113,48 @@
 			</tbody>
 		</table>
 		<button class="primary-button" data-toggle="modal" data-target="#user-modal">Add User</button>
+		<br><br>
+		<h3>Short incidents summary</h3>
+		<table id="users-table" class="table table-hover">
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Type</th>
+					<th>Name</th>
+					<th>Contact #</th>
+					<th>E-mail</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					$query = mysqli_query($connection, "SELECT * FROM reports_incidents_table;");
+					while($r = mysqli_fetch_array($query)){
+						
+							$username = $r['username'];
+							$output_admin = $r['is_admin'];
+							$firstname = $r['firstname'];
+							$middlename = $r['middlename'];
+							$lastname = $r['lastname'];
+							$name = $lastname . ", " . $firstname . " ". $middlename;
+							$contact_num = $r['contact_num'];
+							$email = $r['email'];
+							echo "
+							<tr>
+									<td>" . $username . "</td>
+									<td>" . $is_admin . "</td>
+									<td>" . $name . "</td>
+									<td>" . $contact_num . "</td>
+									<td>" . $email . "</td>
+							</tr>
+							";
+						}
+				?>
+			</tbody>
+		</table>
+
 		</div>
+
+
 
 		<div class="info-panel">
 			<h3>Hello admin!</h3>

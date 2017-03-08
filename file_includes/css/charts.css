@@ -1,4 +1,15 @@
 .chart-item{
 	float:left;
-	background:#C4003F;
+	/*background:#C4003F;*/
+	margin:30px;
+	border-top:solid #E6E6E6 5px;
+	border-bottom:solid #E6E6E6 5px;
+
+}
+
+.solo-graph{
+	clear:both;
+	width:90%;
+	height:100%;
+	border:none;
 }

@@ -1,27 +1,17 @@
 <?php
+<<<<<<< HEAD:katsu_answers_charts.php
 	include("partial_view/essentials-upper.html");
 	include("php/dbconnect_katsu.php");
 	include("php/session_check.php");
-
-	$isadmin = $_SESSION['is_admin'];
-
-			if($isadmin == 1){
-				$link = "admin-landing.php";
-			}
-			else{
-				$link = "user-landing.php";
-			}
 ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <nav>
 			<div class="navbar">
 			<ul>
 				<a href="" class="brand"><li><img src="file_includes/images/dswdlogo.png" class="nav-logo"></li></a>
-				<a href="<?php echo $link;?>"><li>Home</li></a>
-				<a href="report-incident.php"><li>Record Incident</li></a>
+				<a href="admin-landing.php" class="active"><li>Home</li></a>
 				<a href="map.php"><li>Case Mapping</li></a>
-				<a href="katsu_answers_charts.php" class="active"><li>Chatbot Charts</li></a>
-				<a href="php/logout.php"><li>Logout</li></a>
+				<a href="katsu_answers_charts.php"><li>Chatbot Charts</li></a>
 			</ul>
 			</div>
 		</nav>
@@ -30,6 +20,12 @@
 			<h2>Response Charts</h2>
 <?php
 	
+=======
+	include("../php/dbconnect_katsu.php");
+	include("chart_models.php");
+	// include("../php/session_check.php");
+
+>>>>>>> 7fd8cc1eabd7f0f19829f4b1955b87491f34dc1d:charts/katsu_answers_charts.php
 	$get_questions = mysqli_query($connection,"SELECT * FROM katsu_questions_table;");
 
 	while($r = mysqli_fetch_array($get_questions)){
@@ -62,7 +58,6 @@
 								]);
 							var options = {
 								title: '".$question_content."'
-								
 							};
 						var chart = new google.visualization.PieChart(document.getElementById('".$qid."'));
 						chart.draw(data, options);
@@ -77,15 +72,5 @@
 	}
 
 ?>
-	<iframe class="solo-graph" src="charts/age_bar_graph.php"></iframe>
-
-	<iframe class="solo-graph" src="charts/age_line_graph.php"></iframe>
-	</div>
-	<div class="info-panel">
-		<h2>Chatbot data visualized</h2>
-		<p>The charts found on the left are visualized data from the chatbot platform. These data are obtained from children that have interacted with katsu.</p>
-		<p>Align the content area on the left to the charts you want to print by scrolling. Click on the print button to print this page as a report.</p>
-		<p>*Portrait orientation recommended</p>
-		<button class="primary-button" onclick="window.print()">Print</button>
 	</div>
 </div>
