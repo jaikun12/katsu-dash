@@ -1,8 +1,8 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <?php
-	include("partial_view/essentials-upper.html");
-	include("php/dbconnect_katsu.php");
-	include("php/session_check.php");
+	include("../php/dbconnect_katsu.php");
+	include("chart_models.php");
+	// include("../php/session_check.php");
 
 	$get_questions = mysqli_query($connection,"SELECT * FROM katsu_questions_table;");
 
