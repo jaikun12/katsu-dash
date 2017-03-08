@@ -3,8 +3,8 @@
 	include("php/dbconnect_r.php");
 	include("php/session_check.php");
 ?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div class="main-container">
-
 	<img src="file_includes/images/dswdlogo.png" class="main-logo">
 	<h1>Admin Dashboard</h1>
 	<div class="modal fade" id="user-modal" tabindex="-1" role="dialog">
@@ -69,49 +69,43 @@
 				</tr>
 			</thead>
 			<tbody>
-
 				<?php
 					$query = mysqli_query($connection, "SELECT * FROM reports_users_table;");
-
 					while($r = mysqli_fetch_array($query)){
 						if($r['is_active']==0){
-
 						}else{
 							$username = $r['username'];
 							$output_admin = $r['is_admin'];
-
 							if($output_admin==0){
 								$is_admin = "Employee";
 							}elseif($output_admin==1){
 								$is_admin = "Administrator";
 							}else{
-
 							}
-
 							$firstname = $r['firstname'];
 							$middlename = $r['middlename'];
 							$lastname = $r['lastname'];
 							$name = $lastname . ", " . $firstname . " ". $middlename;
 							$contact_num = $r['contact_num'];
 							$email = $r['email'];
-
 							echo "
 							<tr>
-								<td>" . $username . "</td>
-								<td>" . $is_admin . "</td>
-								<td>" . $name . "</td>
-								<td>" . $contact_num . "</td>
-								<td>" . $email . "</td>
+									<td>" . $username . "</td>
+									<td>" . $is_admin . "</td>
+									<td>" . $name . "</td>
+									<td>" . $contact_num . "</td>
+									<td>" . $email . "</td>
 							</tr>
 							";
 						}
 					}
 				?>
-
 			</tbody>
 		</table>
 		<button class="btn-primary" data-toggle="modal" data-target="#user-modal">Add User</button>
-
+	</div>
+	<div class="container">
+		<?php include("php/chatbot_charts.php"); ?>
 	</div>
 
 </div>
@@ -125,8 +119,6 @@
 		});
 	});
 </script>
-
 <?php
 	include("partial_view/essentials-footer.html");
 ?>
-
