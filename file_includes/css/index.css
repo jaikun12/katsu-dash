@@ -69,7 +69,7 @@ nav{
 	width:100vw;
 	height:10vh;
 	background:white;
-	margin-top:-10vh;
+	/*margin-top:-10vh;*/
 	z-index:1;
 	/*display:table-cell;*/
 	/*vertical-align:middle;*/
