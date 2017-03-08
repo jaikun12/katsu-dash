@@ -42,6 +42,7 @@ body{
 }
 
 input{
+	background:none;
 	border:none;
 	border-bottom:solid rgb(55,55,55) 1px;
 	-o-transition:.2s;
@@ -68,7 +69,7 @@ nav{
 	width:100vw;
 	height:10vh;
 	background:white;
-	margin-top:-10vh;
+	/*margin-top:-10vh;*/
 	z-index:1;
 	/*display:table-cell;*/
 	/*vertical-align:middle;*/
