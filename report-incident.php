@@ -1,11 +1,11 @@
 <?php
 	include("partial_view/essentials-upper.html");
-	include("php/dbconnect.php");
+	include("php/dbconnect_r.php");
 	include("php/session_check.php");
 ?>
 
 <div class="container">
-	<form action="" method="POST" role="form">
+	<form action="php/record_incident.php" method="POST" role="form">
 		<legend>Report an Incident</legend>
 	
 		<div class="form-group">
