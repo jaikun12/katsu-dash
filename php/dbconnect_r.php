@@ -3,7 +3,7 @@
 	$url = 'localhost';
 	$db_user = 'root';
 	$db_pass = '';
-	$db = 'katsudb';
+	$db = 'thehack8_cpp_reporting';
 
 	$connection = mysqli_connect($url, $db_user, $db_pass, $db);
 
@@ -14,7 +14,7 @@
     	echo "<br>Debugging error: " . mysqli_connect_error() . PHP_EOL;
 	 }else{
 	// 	echo "Connected to " . $url . " " . $db_user . " " . $db . " " ;
-	 	mysqli_query($connection, "USE katsudb;");
+	 	mysqli_query($connection, "USE thehack8_cpp_reporting;");
 	}
 
 ?>
