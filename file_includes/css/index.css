@@ -42,6 +42,7 @@ body{
 }
 
 input{
+	background:none;
 	border:none;
 	border-bottom:solid rgb(55,55,55) 1px;
 	-o-transition:.2s;
