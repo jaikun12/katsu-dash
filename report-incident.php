@@ -4,7 +4,7 @@
 	include("php/session_check.php");
 ?>
 <link rel="stylesheet" href="file_includes/css/record.css">
-
+<?php include("php/status.php");?>
 <div class="form-container">
 	<form action="php/record_incident.php" method="POST" role="form">
 		<legend>Record Incident</legend>

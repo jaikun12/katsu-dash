@@ -22,6 +22,9 @@
 		elseif($error_code == 6){
 			echo '<p class="error-msg">Please enter important child credentials. (At least a first name and last name provided.)</p>';
 		}
+		elseif($error_code == 7){
+			echo '<p class="error-msg">A similar case has already been recorded.</p>';
+		}
 		else{
 
 		}
@@ -45,6 +48,9 @@
 		}
 		elseif($s == 5){
 			echo '<p class="success-msg">Child credentials added. </p>';
+		}
+		elseif($s == 6){
+			echo '<p class="success-msg">Case recorded!</p>';
 		}
 		else{
 
