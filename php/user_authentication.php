@@ -10,7 +10,7 @@
 		$checkdb = $connection->prepare("SELECT user_id, username, is_admin, firstname, lastname, is_active  FROM reports_users_table WHERE username = ? AND password = ?;");
 		$checkdb->bind_param("ss",$username,$init_pass);
 
-		$log = $connection->prepare("INSERT INTO reports_login_logs (user_id) VALUES ?;");
+		$log = $connection->prepare("INSERT INTO reports_login_logs (user_id) VALUES (?);");
 		$log->bind_param("i",$user_id);
 
 		$init_pass = crypt($password, "!@#$%pornpatrol^&*()");

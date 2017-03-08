@@ -1,5 +1,6 @@
 <?php
 	include("partial_view/essentials-upper.html");
+	include("php/session_init.php");
 ?>
 
 	<div class="main-container">
@@ -13,6 +14,8 @@
 				<button type="submit" class="icon-btn"><span class="glyphicon glyphicon-arrow-right"></span></button>
 			</form>
 		</div>
+
+		<?php include("php/status.php"); ?>
 	</div>
 
 <?php

@@ -12,7 +12,7 @@
 		$admin = $_SESSION['is_admin'];
 
 		if($admin == 1){
-			header("Location: admin-dashboard.php");
+			header("Location: admin-landing.php");
 		}else{
 			header("Location: home.php");
 		}
