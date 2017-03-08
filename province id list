@@ -1,15 +1,12 @@
-surdelsur
-tarlac
-tawi-tawi
-zambales
-zamboanga-del-norte
-zamboanga-sibugay
 abra
 agusan-del-norte
 agusan-del-sur
 aklan
 albay
 antique
+apayao
+aurora
+basilan
 bataan
 batanes
 batangas
@@ -18,6 +15,8 @@ biliran
 bohol
 bukidnon
 bulacan
+cagayan
+camarines-norte
 camarines-sur
 camiguin
 capiz
@@ -25,6 +24,7 @@ catanduanes
 cavite
 cebu
 compostela-valley
+cotobato
 davao-del-norte
 davao-del-sur
 davao-oriental
@@ -32,7 +32,11 @@ dinagat-islands
 eastern-samar
 guimaras
 ifugao
+ilocos-norte
+ilocos-sur
 iloilo
+isabela
+kalinga
 la-union
 laguna
 lanao-del-norte
@@ -41,16 +45,17 @@ leyte
 maguindanao
 marinduque
 masbate
+metro-manila
+mindoro-occidental
+mindoro-oriental
+misamis-occidental
 misamis-oriental
 mountain-province
-negros-occidental
 negroes-oriental
-cotobato
+negros-occidental
 northern-samar
 nueva-ecija
 nueva-viscaya
-mindoro-occidental
-mindoro-oriental
 palawan
 pampanga
 pangasinan
@@ -66,19 +71,14 @@ south-cotobato
 southern-leyte
 sultan-kudarat
 sulu
+surdelsur
 surigao-del-norte
-basilan
+tarlac
+tawi-tawi
+zambales
+zamboanga-del-norte
 zamboanga-del-sur
-isabela
-kalinga
-cagayan
-camarines-norte
-apayao
-aurora
-ilocos-norte
-ilocos-sur
-metro-manila
-misamis-occidental
+zamboanga-sibugay
 
 
 

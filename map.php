@@ -11,13 +11,19 @@
 	</head>
 	<body>
 		<?php
-			include("../php/dbconnect.php");
-			
-
-
-
+			include("php/dbconnect.php");
+			include("models/getcolor.php");
 
 		?>
+
+
+
+		<!--
+			green - #2b9b41
+			yellow - #fcf844
+			orange - #ffb407
+			red - #db020d
+		-->
 		<nav>
 			<div class="navbar">
 			<ul>
@@ -26,87 +32,87 @@
 			</div>
 		</nav>
 		<style>
-		#surdelsur{fill:#fcf844;}
-		#tarlac{fill:#fcf844;}
-		#tawi-tawi{fill:#fcf844;}
-		#zambales{fill:#fcf844;}
-		#zamboanga-del-norte{fill:#fcf844;}
-		#zamboanga-sibugay{fill:#fcf844;}
-		#abra{fill:#fcf844;}
-		#agusan-del-norte{fill:#fcf844;}
-		#agusan-del-sur{fill:#fcf844;}
-		#aklan{fill:#fcf844;}
-		#albay{fill:#fcf844;}
-		#antique{fill:#fcf844;}
-		#bataan{fill:#fcf844;}
-		#batanes{fill:#fcf844;}
-		#batangas{fill:#fcf844;}
-		#benguet{fill:#fcf844;}
-		#biliran{fill:#fcf844;}
-		#bohol{fill:#fcf844;}
-		#bukidnon{fill:#fcf844;}
-		#bulacan{fill:#fcf844;}
-		#camarines-sur{fill:#fcf844;}
-		#camiguin{fill:#fcf844;}
-		#capiz{fill:#fcf844;}
-		#catanduanes{fill:#fcf844;}
-		#cavite{fill:#fcf844;}
-		#cebu{fill:#fcf844;}
-		#compostela-valley{fill:#fcf844;}
-		#davao-del-norte{fill:#2b9b41;}
-		#davao-del-sur{fill:#2b9b41;}
-		#davao-oriental{fill:#2b9b41;}
-		#dinagat-islands{fill:#2b9b41;}
-		#eastern-samar{fill:#2b9b41;}
-		#guimaras{fill:#2b9b41;}
-		#ifugao{fill:#2b9b41;}
-		#iloilo{fill:#2b9b41;}
-		#la-union{fill:#2b9b41;}
-		#laguna{fill:#2b9b41;}
-		#lanao-del-norte{fill:#2b9b41;}
-		#lanao-del-sur{fill:#2b9b41;}
-		#leyte{fill:#2b9b41;}
-		#maguindanao{fill:#2b9b41;}
-		#marinduque{fill:#2b9b41;}
-		#masbate{fill:#ffb407;}
-		#misamis-oriental{fill:#ffb407;}
-		#mountain-province{fill:#ffb407;}
-		#negros-occidental{fill:#ffb407;}
-		#negros-oriental{fill:#ffb407;}
-		#cotobato{fill:#ffb407;}
-		#northern-samar{fill:#ffb407;}
-		#nueva-ecija{fill:#ffb407;}
-		#nueva-viscaya{fill:#ffb407;}
-		#mindoro-occidental{fill:#ffb407;}
-		#mindoro-oriental{fill:#ffb407;}
-		#palawan{fill:#ffb407;}
-		#pampanga{fill:#ffb407;}
-		#pangasinan{fill:#ffb407;}
-		#quezon{fill:#ffb407;}
-		#quirino{fill:#ffb407;}
-		#rizal{fill:#ffb407;}
-		#romblon{fill:#ffb407;}
-		#samar{fill:#ffb407;}
-		#sarangani{fill:#ffb407;}
-		#siquijor{fill:#ffb407;}
-		#sorsogon{fill:#ffb407;}
-		#south-cotobato{fill:#ffb407;}
-		#southern-leyte{fill:#ffb407;}
-		#sultan-kudarat{fill:#ffb407;}
-		#sulu{fill:#ffb407;}
-		#surigao-del-norte{fill:#db020d;}
-		#basilan{fill:#db020d;}
-		#zamboanga-del-sur{fill:#db020d;}
-		#isabela{fill:#db020d;}
-		#kalinga{fill:#db020d;}
-		#cagayan{fill:#db020d;}
-		#camarines-norte{fill:#db020d;}
-		#apayao{fill:#db020d;}
-		#aurora{fill:#db020d;}
-		#ilocos-norte{fill:#db020d;}
-		#ilocos-sur{fill:#db020d;}
-		#metro-manila{fill:#db020d;}
-		#misamis-occidental{fill:#db020d;}
+		#surdelsur{fill:<?php echo $surdelsur;?>;}
+		#tarlac{fill:<?php echo $tarlac;?>;}
+		#tawi-tawi{fill:<?php echo $tawitawi;?>;}
+		#zambales{fill:<?php echo $zambales;?>;}
+		#zamboanga-del-norte{fill:<?php echo $zamboanga_del_norte;?>;}
+		#zamboanga-sibugay{fill:<?php echo $zamboanga_sibugay;?>;}
+		#abra{fill:<?php echo $abra;?>;}
+		#agusan-del-norte{fill:<?php echo $agusan_del_norte;?>;}
+		#agusan-del-sur{fill:<?php echo $agusan_del_sur;?>;}
+		#aklan{fill:<?php echo $aklan;?>;}
+		#albay{fill:<?php echo $albay;?>;}
+		#antique{fill:<?php echo $antique;?>;}
+		#bataan{fill:<?php echo $bataan;?>;}
+		#batanes{fill:<?php echo $batanes;?>;}
+		#batangas{fill:<?php echo $batangas;?>;}
+		#benguet{fill:<?php echo $benguet;?>;}
+		#biliran{fill:<?php echo $biliran;?>;}
+		#bohol{fill:<?php echo $bohol;?>;}
+		#bukidnon{fill:<?php echo $bukidnon;?>;}
+		#bulacan{fill:<?php echo $bulacan;?>;}
+		#camarines-sur{fill:<?php echo $camarines_sur;?>;}
+		#camiguin{fill:<?php echo $camiguin;?>;}
+		#capiz{fill:<?php echo $capiz;?>;}
+		#catanduanes{fill:<?php echo $catanduanes;?>;}
+		#cavite{fill:<?php echo $cavite;?>;}
+		#cebu{fill:<?php echo $cebu;?>;}
+		#compostela-valley{fill:<?php echo $compostela_valley;?>;}
+		#davao-del-norte{fill:<?php echo $davao_del_norte;?>;}
+		#davao-del-sur{fill:<?php echo $davao_del_sur;?>;}
+		#davao-oriental{fill:<?php echo $davao_oriental;?>;}
+		#dinagat-islands{fill:<?php echo $dinagat_islands;?>;}
+		#eastern-samar{fill:<?php echo $eastern_samar;?>;}
+		#guimaras{fill:<?php echo $guimaras;?>;}
+		#ifugao{fill:<?php echo $ifugao;?>;}
+		#iloilo{fill:<?php echo $iloilo;?>;}
+		#la-union{fill:<?php echo $la_union;?>;}
+		#laguna{fill:<?php echo $laguna;?>;}
+		#lanao-del-norte{fill:<?php echo $lanao_del_norte;?>;}
+		#lanao-del-sur{fill:<?php echo $lanao_del_sur;?>;}
+		#leyte{fill:<?php echo $leyte;?>;}
+		#maguindanao{fill:<?php echo $maguindanao;?>;}
+		#marinduque{fill:<?php echo $marinduque;?>;}
+		#masbate{fill:<?php echo $masbate;?>;}
+		#misamis-oriental{fill:<?php echo $misamis_oriental;?>;}
+		#mountain-province{fill:<?php echo $misamis_occidental;?>;}
+		#negros-occidental{fill:<?php echo $negros_occidental;?>;}
+		#negros-oriental{fill:<?php echo $negros_oriental;?>;}
+		#cotobato{fill:<?php echo $cotobato;?>;}
+		#northern-samar{fill:<?php echo $northern_samar;?>;}
+		#nueva-ecija{fill:<?php echo $nueva_ecija;?>;}
+		#nueva-viscaya{fill:<?php echo $nueva_viscaya;?>;}
+		#mindoro-occidental{fill:<?php echo $mindoro_occidental;?>;}
+		#mindoro-oriental{fill:<?php echo $mindoro_oriental;?>;}
+		#palawan{fill:<?php echo $palawan;?>;}
+		#pampanga{fill:<?php echo $pampanga;?>;}
+		#pangasinan{fill:<?php echo $pangasinan;?>;}
+		#quezon{fill:<?php echo $quezon;?>;}
+		#quirino{fill:<?php echo $quirino;?>;}
+		#rizal{fill:<?php echo $rizal;?>;}
+		#romblon{fill:<?php echo $romblon;?>;}
+		#samar{fill:<?php echo $samar;?>;}
+		#sarangani{fill:<?php echo $sarangani;?>;}
+		#siquijor{fill:<?php echo $siquijor;?>;}
+		#sorsogon{fill:<?php echo $sorsogon;?>;}
+		#south-cotobato{fill:<?php echo $south_cotobato;?>;}
+		#southern-leyte{fill:<?php echo $southern_leyte;?>;}
+		#sultan-kudarat{fill:<?php echo $sultan_kudarat;?>;}
+		#sulu{fill:<?php echo $sulu;?>;}
+		#surigao-del-norte{fill:<?php echo $surigao_del_norte;?>;}
+		#basilan{fill:<?php echo $basilan;?>;}
+		#zamboanga-del-sur{fill:<?php echo $zamboanga_del_sur;?>;}
+		#isabela{fill:<?php echo $isabela;?>;}
+		#kalinga{fill:<?php echo $kalinga;?>;}
+		#cagayan{fill:<?php echo $cagayan;?>;}
+		#camarines-norte{fill:<?php echo $camarines_norte;?>;}
+		#apayao{fill:<?php echo $apayao;?>;}
+		#aurora{fill:<?php echo $aurora;?>;}
+		#ilocos-norte{fill:<?php echo $ilocos_norte;?>;}
+		#ilocos-sur{fill:<?php echo $ilocos_sur;?>;}
+		#metro-manila{fill:<?php echo $metro_manila;?>;}
+		#misamis-occidental{fill:<?php echo $misamis_occidental;?>;}
 		</style>
 		<div class="map">
 		<svg version ="1.1" style="width: 700px; height: 700px;">
