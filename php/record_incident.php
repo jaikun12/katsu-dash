@@ -8,50 +8,56 @@
 	include("dbconnect.php");
 	include("session_check.php");
 
-	$child_firstname = $_POST['firstname'];
-	$child_middlename = $_POST['middlename'];
-	$child_lastname = $_POST['lastname'];
+	$child_firstname = strtolower($_POST['firstname']);
+	$child_middlename = strtolower($_POST['middlename']);
+	$child_lastname = strtolower($_POST['lastname']);
 
-	$child_prefix = $_POST['prefix'];
+	$child_prefix = strtolower($_POST['prefix']);
 	$child_age = $_POST['age'];
-	$child_sex = $_POST['sex'];
-	$child_religion = $_POST['religion'];
+	$child_sex = $_POST['child_sex'];
+	$child_religion = strtolower($_POST['religion']);
 
-	$child_region = $_POST['region'];
-	$child_province = $_POST['province'];
-	$child_city_mun = $_POST['city'];
-	$child_barangay = $_POST['barangay'];
+	$child_province = $_POST['child_province'];
 
-	$child_place_of_origin = $_POST['place_of_origin'];
-	$child_type_of_case = $_POST['type_of_case'];
-	$child_modes_of_victimization = $_POST['case_scenario'];
-	$child_perpetrators = $_POST['perpetrators'];
-	$child_case_origin = $_POST['case_origin'];
-	$child_intake = $_POST['date_of_admission'];
-	$child_cooperating_agencies = $_POST['cooperating_agencies'];
-	$child_interventions_provided = $_POST['interventions_provided'];
-	$child_status_of_case = $_POST['status_of_case'];
+	$child_place_of_origin = strtolower($_POST['child_address']);
+	$child_type_of_case = strtolower($_POST['type_of_case']);
+	$child_modes_of_victimization = strtolower($_POST['case_scenario']);
+	$child_perpetrators = strtolower($_POST['perpetrators']);
+	$child_case_origin = strtolower($_POST['case_origin']);
+	$child_cooperating_agencies = strtolower($_POST['cooperating_agencies']);
+	$child_interventions_provided = strtolower($_POST['intervention']);
+	$child_status_of_case = $_POST['case_status'];
 
-	$check_incident = $connection->prepare("INSERT INTO reports_child_table (child_firstname, child_middlename, child_lastname, child_prefix, child_birthdate, child_age, child_sex, child_religion, child_region, child_province, child_city_mun, child_barangay, child_place_of_origin, child_type_of_case, child_modes_of_victimization, child_perpetrators, child_case_origin, child_intake, child_cooperating_agencies, child_interventions_provided, child_status_of_cases, user_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
-	$check_incident->bind_param("sssssisssssssssssssssi",$child_firstname, $child_middlename, $child_lastname, $child_prefix, $child_birthdate, $child_age, $child_sex, $child_religion, $child_region, $child_province, $child_city_mun, $child_barangay, $child_place_of_origin, $child_type_of_case, $child_modes_of_victimization, $child_perpetrators, $child_case_origin, $child_intake, $child_cooperating_agencies, $child_interventions_provided, $child_status_of_cases, $user_id);
+	// echo "
+	// $child_firstname $child_middlename $child_lastname <br>
+	// age: $child_age<br>
+	// sex: $child_sex<br>
+	// religion: $child_religion<br>
+	// province: $child_province<br>
+	// origin: $child_place_of_origin<br>
+	// type of case: $child_type_of_case<br>
+	// modes of victimization: $child_modes_of_victimization<br>
+	// perpetrators: $child_perpetrators<br>
+	// case origin: $child_case_origin<br>
+	// cooperating agencies: $child_cooperating_agencies<br>
+	// interventions provided: $child_interventions_provided<br>
+	// case status: $child_status_of_case<br>
+	// userid: $user_id";
 
-	$insert_user = $connection->prepare("SELECT * FROM reports_child_table WHERE child_firstname = ? AND child_middlename = ? AND child_lastname = ? AND child_perpetrators = ? AND child_;");
+	$insert_incident = $connection->prepare("INSERT INTO reports_incidents_table (child_firstname, child_middlename, child_lastname, child_prefix, child_age, child_sex, child_religion, child_province, child_place_of_origin, child_type_of_case, child_modes_of_victimization, child_perpetrators, child_case_origin, child_cooperating_agencies, child_interventions_provided, child_status_of_cases, user_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+	$insert_incident->bind_param("ssssisssssssssssi",$child_firstname, $child_middlename, $child_lastname, $child_prefix, $child_age, $child_sex, $child_religion, $child_province, $child_place_of_origin, $child_type_of_case, $child_modes_of_victimization, $child_perpetrators, $child_case_origin, $child_cooperating_agencies, $child_interventions_provided, $child_status_of_case, $user_id);
 
-	if(mysqli_num_rows($check_db)==0){ // if username is not taken
+	$check_dup_query = "SELECT * FROM reports_incidents_table WHERE child_firstname = '$child_firstname' AND child_middlename = '$child_middlename' AND child_lastname = '$child_lastname' AND child_age = '$child_age' AND child_sex = '$child_sex' AND child_status_of_cases = '$child_status_of_case';";
 
-		$insert_user = "INSERT INTO katsu_users_table (username, password, is_admin, firstname, middlename, lastname, contact_num, email, is_active) VALUES ('$username', '$encrypted', '$is_admin', '$firstname', '$middlename', '$lastname', '$contact_num', '$email', 1);";
+	$check_dup = mysqli_query($connection,$check_dup_query);
 
-		$sql = mysqli_query($connection, $insert_user);
-
-			if(!$sql){
-		    	echo "<br><br>Check code. <br>" . mysqli_error($connection);
-		    }else{
-		    	//debug here
-		    	header("Location: ../admin-dashboard.php?success=1");
-		    }
-
-	}else{
-		echo "The username: " . $username . " already exists.";
+	$dup_count = mysqli_num_rows($check_dup);
+	if($dup_count == 0){ // if username is not taken
+		$insert_incident -> execute();
+		header("Location: ../admin-landing.php?success=1");
+	}
+	else{
+		echo "The case already exists.";
 	}
 
     mysqli_close($connection);

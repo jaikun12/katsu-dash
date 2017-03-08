@@ -24,7 +24,10 @@
 			<label for="">Age</label>
 			<input type="text" class="form-control" id="" name="age" placeholder="Input Child's Child Age (at the commision of crime)">
 			<label for="">Sex</label>
-			<input type="text" class="form-control" id="" name="sex" placeholder="Input Child's Sex">
+			<select class="form-control" name="child_sex">
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
 			<label for="">Religion</label>
 			<input type="text" class="form-control" id="" name="religion" placeholder="Input Child's Religion">
 		</div>
@@ -33,6 +36,7 @@
 		<h4>Location (where the crime happened/where the child was rescued)</h4>
 			<label for="">Province</label>
 			<select class="form-control" id="province" name="child_province">
+				<option disabled selected>Choose province</option>
 				<option value="abra">Abra</option>
 				<option value="agusan-del-norte">Agusan Del Norte</option>
 				<option value="agusan-del-sur">Agusan Del Sur</option>
@@ -117,10 +121,8 @@
 
 
 			</select>
-
-
 			<label for="">Place of Origin/Child's Home Address</label>
-			<textarea type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Home Address (Where the child resides before the victimization"></textarea>
+			<textarea type="text" class="form-control" id="" name="child_address" placeholder="Input Child's Home Address (Where the child resides before the victimization"></textarea>
 		</div>
 		<br>
 		<div class="form-group">
@@ -137,9 +139,17 @@
 			<label for="">Cooperating Agencies/ Organziations</label>
 			<input type="text" class="form-control" id="" name="cooperating_agencies" placeholder="Input Child's Cooperating Agencies/ Organziations">
 			<label for="">Interventions Provided</label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Interventions Provided (e.g. Medical, psychosocial support, counselling, temporary shelter, livelihood, etc.)">
+			<input type="text" class="form-control" id="" name="intervention" placeholder="Input Child's Interventions Provided (e.g. Medical, psychosocial support, counselling, temporary shelter, livelihood, etc.)">
 			<label for="">Status of the Case </label>
-			<input type="text" class="form-control" id="" name="firstname" placeholder="Input Child's Status of the Cases (e.g. on-going court case, dismissed, on-going rehabilitation, reintegrated, etc.)">
+			<select class="form-control" name="case_status">
+				<option disabled selected>Choose case status</option>
+				<option value="ongoing-case">Ongoing Court Case</option>
+				<option value="dismissed">Dismissed</option>
+				<option value="ongoing-rehabilitation">Ongoing Rehabilitation</option>
+				<option value="reintegrated">Reintegrated</option>
+				<option value="resolved">Resolved</option>
+			</select>
+			
 		</div>
 		<br>
 		<button type="submit" class="btn btn-primary">REPORT</button>
