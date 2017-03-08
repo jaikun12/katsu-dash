@@ -118,11 +118,11 @@
 		<table id="users-table" class="table table-hover">
 			<thead>
 				<tr>
-					<th>Username</th>
-					<th>Type</th>
 					<th>Name</th>
-					<th>Contact #</th>
-					<th>E-mail</th>
+					<th>Age</th>
+					<th>Sex</th>
+					<th>province</th>
+					<th>Mode of victimization</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -130,21 +130,18 @@
 					$query = mysqli_query($connection, "SELECT * FROM reports_incidents_table;");
 					while($r = mysqli_fetch_array($query)){
 						
-							$username = $r['username'];
-							$output_admin = $r['is_admin'];
-							$firstname = $r['firstname'];
-							$middlename = $r['middlename'];
-							$lastname = $r['lastname'];
-							$name = $lastname . ", " . $firstname . " ". $middlename;
-							$contact_num = $r['contact_num'];
-							$email = $r['email'];
+							$name = $r['child_firstname']." ".$r['child_middlename']." ".$r['child_lastname'];
+							$age = $r['child_age'];
+							$sex = $r['child_sex'];
+							$province = $r['child_province'];
+							$mode = $r['child_modes_of_victimization'];
 							echo "
 							<tr>
-									<td>" . $username . "</td>
-									<td>" . $is_admin . "</td>
 									<td>" . $name . "</td>
-									<td>" . $contact_num . "</td>
-									<td>" . $email . "</td>
+									<td>" . $age . "</td>
+									<td>" . $sex . "</td>
+									<td>" . $province . "</td>
+									<td>" . $mode . "</td>
 							</tr>
 							";
 						}

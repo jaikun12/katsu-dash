@@ -8,6 +8,15 @@
 	include("dbconnect.php");
 	include("session_check.php");
 
+	$isadmin = $_SESSION['is_admin'];
+
+			if($isadmin == 1){
+				$link = "Location: ../admin-landing.php?success=1";
+			}
+			else{
+				$link = "Location: ../user-landing.php?success=1";
+			}
+
 	$child_firstname = strtolower($_POST['firstname']);
 	$child_middlename = strtolower($_POST['middlename']);
 	$child_lastname = strtolower($_POST['lastname']);
@@ -27,6 +36,13 @@
 	$child_cooperating_agencies = strtolower($_POST['cooperating_agencies']);
 	$child_interventions_provided = strtolower($_POST['intervention']);
 	$child_status_of_case = $_POST['case_status'];
+
+	if(!isset($child_firstname) || !isset($child_middlename) || !isset($child_lastname) || !isset($child_age) || !isset($child_sex) || !isset($child_religion) || !isset($child_province) || !isset($child_place_of_origin) || !isset($child_type_of_case) || !isset($child_modes_of_victimization) || !isset($child_perpetrators) || !isset($child_case_origin) || !isset($child_cooperating_agencies) || !isset($child_interventions_provided) || !isset($child_status_of_case)){
+		header("Location: ../report-incident.php?error=1");
+	}
+	else{
+
+	}
 
 	// echo "
 	// $child_firstname $child_middlename $child_lastname <br>
@@ -54,10 +70,10 @@
 	$dup_count = mysqli_num_rows($check_dup);
 	if($dup_count == 0){ // if username is not taken
 		$insert_incident -> execute();
-		header("Location: ../admin-landing.php?success=1");
+		header($link);
 	}
 	else{
-		echo "The case already exists.";
+		header("Location: ../report-incident.php?error=7");
 	}
 
     mysqli_close($connection);

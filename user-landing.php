@@ -19,6 +19,7 @@
 		<h4>The system allows you to view data about the current state of child porn in the Philippines. Feel free to explore</h4>
 		<h4>The system is also used to record incidences of child pornography.</h4>
 		
+		<?php include("php/status.php"); ?>
 	</div>
 
 <?php
