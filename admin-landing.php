@@ -12,7 +12,7 @@
 				<a href="report-incident.php"><li>Record Incident</li></a>
 				<a href="map.php"><li>Case Mapping</li></a>
 				<a href="katsu_answers_charts.php"><li>Chatbot Charts</li></a>
-				<a href="webtoons-summary"><li>Webtoons Summary</li></a>
+				<a href="webtoons-summary.php"><li>Webtoons Summary</li></a>
 				<a href="php/logout.php"><li>Logout</li></a>
 			</ul>
 			</div>
