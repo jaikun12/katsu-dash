@@ -1,5 +1,6 @@
 <?php
 	include("dbconnect.php");
+	include("session_init.php");
 
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -7,6 +8,7 @@
 	if(!$username || !$password){
 		header("Location: ../index.php?error=1");
 	}else{
+
 		$checkdb = $connection->prepare("SELECT user_id, username, is_admin, firstname, lastname, is_active  FROM reports_users_table WHERE username = ? AND password = ?;");
 		$checkdb->bind_param("ss",$username,$init_pass);
 
@@ -36,13 +38,14 @@
 				$_SESSION['lastname'] = $lastname;
 				$_SESSION['is_admin'] = $is_admin;
 
-				if($r['is_active']){ //checks if is active
+
+				if($r['is_active']==1){ //checks if is active
 
 					$log->execute();
 
 					if($_SESSION['is_admin'] == 1){ // checks admin priv
 						echo mysqli_error($connection);
-						// header("Location: ../admin-landing.php");
+						header("Location: ../admin-landing.php");
 					}
 					else{
 						header("Location: ../user-landing.php");
