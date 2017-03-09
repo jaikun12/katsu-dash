@@ -14,7 +14,7 @@
 		if($admin == 1){
 			header("Location: admin-landing.php");
 		}else{
-			header("Location: home.php");
+			header("Location: user-landing.php");
 		}
 
 		
