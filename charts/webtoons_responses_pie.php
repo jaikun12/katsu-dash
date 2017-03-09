@@ -7,23 +7,25 @@
 
 	while($r = mysqli_fetch_array($get_webtoons)){
 		$webtoonID = $r['webtoonID'];
+		$title = $r['title'];
 		$get_responses = mysqli_query($connection,"SELECT * FROM wt_responses WHERE webtoonID = '$webtoonID'");
+		$count=0;
+
+		while($ar = mysqli_fetch_array($get_responses)){
+			$response = $ar['response'];
+			if($response == $ar['response']){
+				$count++;
+			}
+			
+		}
 		echo '<script type="text/javascript">';
 			echo "google.charts.load('current', {'packages':['corechart']});
 					google.charts.setOnLoadCallback(drawChart);
 					function drawChart() {
 						var data = google.visualization.arrayToDataTable([
-								['Responses', 'Number of Counts'],";
-
-		while($ar = mysqli_fetch_array($get_responses)){
-			$response = $r['response'];
-			$ready_to_count = mysqli_query($connection,"SELECT * FROM wt_webtoon WHERE response = '$response';");
-			$count = mysqli_num_rows($ready_to_count);
-					echo "['".$
-		}
-								['Yes', parseInt('".$total_yes."')],
-								['No', parseInt('".$total_no."')]
-								]);
+								['Responses', 'Number of Counts'],
+								['".$response.", parseInt('".$count."')]";
+							echo "]);
 							var options = {
 								title: '".$title." Pie Chart'
 								
@@ -34,10 +36,6 @@
 				</script>";
 			
 			echo '<div id="'.$webtoonID.'" class="chart-item" style="width: 300px; height: 200px;"></div>';
-		}else{
-
-		}
-		
 	}
 
 ?>

@@ -112,9 +112,38 @@
 				?>
 			</tbody>
 		</table>
+
+
 		<button class="primary-button" data-toggle="modal" data-target="#user-modal">Add User</button>
+
+		<button class="primary-button" data-toggle="modal" data-target="#disableuser-modal">Disable User</button>
+
+		<div class="modal fade" id="disableuser-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="container-fluid">
+
+							<form action="php/disable_user.php" method="POST" role="form">
+								<legend>Disable a user or an admin</legend>
+
+								<?php include("partial_view/disabled_users_option.php"); ?> <br><br>
+
+								<button type="submit" class="btn btn-primary">Disable User</button>
+
+							</form>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
 		<br><br>
+
 		<h3>Short incidents summary</h3>
+
 		<table id="users-table" class="table table-hover">
 			<thead>
 				<tr>
@@ -158,6 +187,10 @@
 			<p>Welcome to the anti child porn PH report generating platform.</p>
 			<p>The user list shown on the left shows the current active accounts that could access the system.</p>
 			<p>Proceed to the case mapping page to view a heatmap of child pornography cases in the Philippines.</p>
+
+			<h4 style="margin-top: 50px;color:red !important;">
+			<?php include("php/status.php"); ?>
+			</h4>
 		</div>
 </div>
 <script>

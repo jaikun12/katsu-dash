@@ -31,7 +31,7 @@
 
 	// $insert_user = "INSERT INTO users_table (username, password, is_admin, firstname, middlename, lastname, email, is_active) VALUES ('$username', '$password', '$is_admin', '$firstname', '$middlename', '$lastname', '$contact_num', '$email', '1';)";
 
-	$check_db = mysqli_query($connection, "SELECT * FROM katsu_users_table WHERE username = '$username';");
+	$check_db = mysqli_query($connection, "SELECT * FROM katsu_users_table WHERE username = '$username' AND is_active = 1;");
 
 	if(mysqli_num_rows($check_db)==0){ // if username is not taken
 
