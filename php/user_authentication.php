@@ -35,14 +35,14 @@
 				$_SESSION['firstname'] = $firstname;
 				$_SESSION['lastname'] = $lastname;
 				$_SESSION['is_admin'] = $is_admin;
-				$KIA = $is_active;
 
-				if($KIA == 1){ //checks if is active
+				if($r['is_active']){ //checks if is active
 
 					$log->execute();
 
 					if($_SESSION['is_admin'] == 1){ // checks admin priv
-						header("Location: ../admin-landing.php");
+						echo mysqli_error($connection);
+						// header("Location: ../admin-landing.php");
 					}
 					else{
 						header("Location: ../user-landing.php");
